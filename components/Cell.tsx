@@ -2,12 +2,12 @@ import styled from '@emotion/styled';
 import { useEffect, useRef, useState } from 'react';
 import { motion, MotionValue, useTransform } from 'framer-motion';
 
-export const CELL_SIZE = 100;
+export const CELL_SIZE = 60;
 
 const Container = styled.div`
   width: ${CELL_SIZE}px;
   height: ${CELL_SIZE}px;
-  border: 1px dashed #555;
+  border: 1px dotted #fff;
   color: silver;
   margin: -1px;
   display: flex;
@@ -48,7 +48,7 @@ const Cell: React.FC<CellProps> = ({ mouseX, mouseY }) => {
 
   return (
     <Container ref={ref}>
-      <motion.div style={{ zIndex: 0, rotate: direction }}>→</motion.div>
+      <motion.div style={{ zIndex: 0, rotate: direction }}>—</motion.div>
     </Container>
   );
 };

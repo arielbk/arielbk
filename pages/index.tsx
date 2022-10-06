@@ -4,7 +4,9 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import { BsGithub, BsLinkedin } from 'react-icons/bs';
 import { SiJquery } from 'react-icons/si';
+import { FaLinkedinIn } from 'react-icons/fa';
 import Grid from '../components/Grid';
+import SocialLink from '../components/SocialLink';
 
 const Home: NextPage = () => {
   return (
@@ -15,7 +17,6 @@ const Home: NextPage = () => {
         justifyContent="center"
         alignItems="center"
         minH="100vh"
-        zIndex={10}
         position="relative"
       >
         <Head>
@@ -38,7 +39,7 @@ const Home: NextPage = () => {
           borderRadius={42}
           padding={32}
           bgColor="#252525"
-          whileTap={{ scale: 0.9 }}
+          whileTap={{ scale: 0.95 }}
         >
           <chakra.h1
             fontWeight={200}
@@ -49,17 +50,15 @@ const Home: NextPage = () => {
             arielbk
           </chakra.h1>
           <Box fontSize={64} display="flex" gap={64}>
-            <a href="https://linkedin.com/in/arielbk">
-              <Box>
-                <BsLinkedin />
-              </Box>
-            </a>
-            <a href="https://dev.to/arielbk">
-              <SiJquery />
-            </a>
-            <a href="https://github.com/arielbk">
+            <SocialLink link="https://github.com/arielbk" name="GitHub">
               <BsGithub />
-            </a>
+            </SocialLink>
+            <SocialLink link="https://dev.to/arielbk" name="Dev.to">
+              <SiJquery />
+            </SocialLink>
+            <SocialLink link="https://linkedin.com/in/arielbk" name="LinkedIn">
+              <FaLinkedinIn />
+            </SocialLink>
           </Box>
         </Box>
       </Box>

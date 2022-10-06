@@ -100,7 +100,7 @@ function Grid() {
     };
   }, []);
 
-  const opacity = useTransform(mouseVelocity, [0, 1000], [0.3, 1]);
+  const opacity = useTransform(mouseVelocity, [0, 1000], [0.2, 1]);
   // const WebkitMaskPosition = useMotionTemplate`${centerMouseX}px ${centerMouseY}px`;
 
   const rotate = useMotionValue(0);
