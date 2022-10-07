@@ -60,7 +60,7 @@ const Grid: React.FC<{
     };
   }, []);
 
-  const opacity = useTransform(mouseVelocity, [0, 1000], [0, 0.8]);
+  const opacity = useTransform(mouseVelocity, [0, 1000], [0.4, 1]);
 
   return (
     <Container

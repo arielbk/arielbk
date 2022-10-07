@@ -8,7 +8,7 @@ const Container = styled.div`
   width: ${CELL_SIZE}px;
   height: ${CELL_SIZE}px;
   border: 1px dotted #fff;
-  color: silver;
+  color: white;
   margin: -1px;
   display: flex;
   justify-content: center;

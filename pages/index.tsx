@@ -14,8 +14,12 @@ import MainBox from '../components/MainBox';
 
 const Home: NextPage = () => {
   // mouse position
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
+  const mouseX = useMotionValue(
+    typeof window !== 'undefined' ? window.innerWidth / 2 : 0
+  );
+  const mouseY = useMotionValue(
+    typeof window !== 'undefined' ? window.innerHeight / 2 : 0
+  );
   // eased mouse position
   const mouseXEased = useMotionValue(0);
   const mouseYEased = useMotionValue(0);
@@ -89,7 +93,7 @@ const Home: NextPage = () => {
             />
             {/* <link rel="icon" href="/favicon.ico" /> */}
           </Head>
-          <Box as={motion.div} ref={ref}>
+          <Box as={motion.div} ref={ref} style={{ translateZ: 300 }}>
             <MainBox />
           </Box>
         </Box>

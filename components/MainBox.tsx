@@ -12,24 +12,32 @@ const MainBox: React.FC = () => {
       display="flex"
       flexDir="column"
       alignItems="center"
-      gap={32}
       borderColor="gray"
       borderStyle={'solid'}
       borderWidth={4}
       borderRadius={42}
-      padding={32}
       bgColor="#252525"
+      whileHover={{ borderColor: '#c0c0c0' }}
       whileTap={{ scale: 0.95 }}
+      style={{ transform: 'translateZ(100px)' }}
     >
       <chakra.h1
         fontWeight={200}
         fontSize="5rem"
         paddingBottom={'3rem'}
         color="silver"
+        padding={32}
       >
         arielbk
       </chakra.h1>
-      <Box fontSize={64} display="flex" gap={64}>
+      <Box
+        fontSize={64}
+        display="flex"
+        gap={48}
+        background="#151515"
+        padding={32}
+        borderRadius="0 0 42px 42px"
+      >
         <SocialLink link="https://github.com/arielbk" name="GitHub">
           <BsGithub />
         </SocialLink>
