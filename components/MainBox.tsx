@@ -2,7 +2,6 @@ import { Box, chakra } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import { BsGithub } from 'react-icons/bs';
 import { FaLinkedinIn } from 'react-icons/fa';
-import { SiJquery } from 'react-icons/si';
 import DevLogo from './logos/Dev';
 import SocialLink from './SocialLink';
 

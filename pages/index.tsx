@@ -1,8 +1,9 @@
-import { Box } from '@chakra-ui/react';
+import { Box, useMediaQuery } from '@chakra-ui/react';
 import {
   animate,
   AnimationOptions,
   motion,
+  PanInfo,
   useMotionValue,
   useTransform,
 } from 'framer-motion';
@@ -63,6 +64,16 @@ const Home: NextPage = () => {
     return newRotateY / dampen;
   });
 
+  const [isSmallScreen] = useMediaQuery(['(max-width: 650px)']);
+
+  const handleDrag = (
+    e: MouseEvent | TouchEvent | PointerEvent,
+    info: PanInfo
+  ): void => {
+    animate(mouseX, info.point.x);
+    animate(mouseY, info.point.y);
+  };
+
   return (
     <Box as={motion.div} overflow="hidden" style={{ perspective: 1000 }}>
       <Box
@@ -93,9 +104,15 @@ const Home: NextPage = () => {
             />
             {/* <link rel="icon" href="/favicon.ico" /> */}
           </Head>
-          <Box as={motion.div} ref={ref} style={{ translateZ: 300 }}>
+          <motion.div
+            ref={ref}
+            drag
+            dragConstraints={ref}
+            onDrag={handleDrag}
+            style={{ scale: isSmallScreen ? 0.6 : 1, translateZ: 300 }}
+          >
             <MainBox />
-          </Box>
+          </motion.div>
         </Box>
       </Box>
     </Box>
