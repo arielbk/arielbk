@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { BsGithub } from 'react-icons/bs';
 import { FaLinkedinIn } from 'react-icons/fa';
 import { SiJquery } from 'react-icons/si';
+import DevLogo from './logos/Dev';
 import SocialLink from './SocialLink';
 
 const MainBox: React.FC = () => {
@@ -42,7 +43,7 @@ const MainBox: React.FC = () => {
           <BsGithub />
         </SocialLink>
         <SocialLink link="https://dev.to/arielbk" name="Dev.to">
-          <SiJquery />
+          <DevLogo width={62} />
         </SocialLink>
         <SocialLink link="https://linkedin.com/in/arielbk" name="LinkedIn">
           <FaLinkedinIn />
